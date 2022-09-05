@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Sleepster</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static',filename=('favicon.ico'))}}">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{{url_for('static',filename=('styles/bootstrap.min.css'))}}">
+    <link rel="stylesheet" href="{{url_for('static',filename=('styles/flaticon.css'))}}">
+    <link rel="stylesheet" href="{{url_for('static',filename=('styles/animate.min.css'))}}">
+    <link rel="stylesheet" href="{{url_for('static',filename=('styles/animated-headline.css'))}}">
+    <link rel="stylesheet" href="{{url_for('static',filename=('styles/fontawesome-all.min.css'))}}">
+    <link rel="stylesheet" href="{{url_for('static',filename=('styles/themify-icons.css'))}}">
+    <link rel="stylesheet" href="{{url_for('static',filename=('styles/slick.css'))}}">
+    <link rel="stylesheet" href="{{url_for('static',filename=('styles/style.css'))}}">
+</head>
+<body>
+    
+    <!-- Preloader Start -->
+    <header>
+        <!--? Header Start -->
+        <div class="header-area">
+            <div class="main-header header-sticky">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <!-- Logo -->
+                        <div class="col-xl-2 col-lg-2 col-md-1">
+                            <div class="logo">
+                                <a href="index.html"><img src="{{url_for('static',filename=('img/logo/sleeper.png'))}}"  alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-10 col-lg-10 col-md-10">
+                            <div class="menu-main d-flex align-items-center justify-content-end">
+                                <!-- Main-menu -->
+                                <div class="main-menu f-right d-none d-lg-block">
+                                    <nav> 
+                                        <ul id="navigation">
+                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="#">About</a></li>
+                                            <li><a href="#">Services</a></li>
+                                            <li><a href="#">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="header-right-btn f-right d-none d-lg-block ml-15">
+                                    <a href="#" class="btn header-btn">Diagnose yourself</a>
+                                </div>
+                            </div>
+                        </div>   
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <main>
+        <!--? Slider Area Start-->
+        <div class="slider-area">
+            <div class="slider-active dot-style">
+                <!-- Slider Single -->
+                <div class="single-slider d-flex align-items-center slider-height">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-xl-7 col-lg-8 col-md-10 ">
+                             <div class="hero-wrapper">
+                                <div class="hero__caption">
+                                    <h1 data-animation="fadeInUp" data-delay=".3s">Sleep isn't a choice, it is a must </h1>
+                                    <p data-animation="fadeInUp" data-delay=".6s">Do you doubt yourself of having Insomnia ?<br> Want to restructure your daily routine?</p>
+                                    <a href="services.html" class="btn" data-animation="fadeInLeft" data-delay=".3s">Diagnose yourself</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+    </div>
+</div>
+<!-- Slider Area End -->
+<!--Diagnosing section starts-->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 formstyle">
+            <h3 class="mb-30">Form Element</h3>
+            <form action="{{url_for('checking')}}" method="post">
+                <div class="mt-10">
+                    <input type="text" name="name" placeholder="Name"
+                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'" required
+                    class="single-input">
+                </div>
+                <div class="mt-10">
+                    <input type="number" name="age" placeholder="Age"
+                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Age'" required
+                    class="single-input">
+                </div>
+    
+                <div class="mt-10">
+                    <input type="number" name="weight" placeholder="Weight"
+                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Weight'" required
+                    class="single-input">
+                </div>
+                <div class="input-group-icon mt-10">
+                    <div class="form-select" id="default-select">
+                        <select name='sex'>
+                            <option  value=" 2">Sex</option>
+                            <option   value="1">Male</option>
+                            <option  value="0">Female</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group-icon mt-10">
+                    <div class="form-select" id="default-select">
+                        <select name='stressoptions'>
+                            <option  value=" 0">Stress</option>
+                            <option  value="1">Normal</option>
+                            <option  value="2">Medium</option>
+                            <option  value="3">High</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group-icon mt-10">
+                    <div class="form-select" id="default-select">
+                        <select name='sportoptions'>
+                            <option  value=" 2">Do you have the habit of playing physically?</option>
+                            <option   value="1">Yes</option>
+                            <option  value="0">No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group-icon mt-10">
+                    <div class="form-select" id="default-select">
+                        <select name='sleepoptions'>
+                            <option  value=" 0">Hours of Sleep</option>
+                            <option  value="1">0-4</option>
+                            <option  value="2">5-8</option>
+                            <option  value="3">8-12</option>
+                            <option  value="4">0</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mt-10">
+                    <input type="text" name="mproblem" placeholder="Facing any Medical Problems?"
+                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" required
+                    class="single-input">
+                </div>
+                <div class="input-group-icon mt-10">
+                    <div class="form-select" id="default-select">
+                        <select name='daysleepoptions'>
+                            <option  value=" 2">Do you day sleep?</option>
+                            <option   value="1">Yes</option>
+                            <option  value="0">No</option>
+                        </select>
+                    </div>
+                </div>
+
+                
+
+                <div class="input-group-icon mt-10">
+                    <div class="form-select" id="default-select">
+                        <select name='drowsyoptions'>
+                            <option  value=" 2">Do you feel drowsy always?</option>
+                            <option  value="1">Yes</option>
+                            <option  value="0">No</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+        
+    </div>
+</div>
+
+<!--Diagnosing section ends-->
+
+
+<!--? About-2 Area Start -->
+<div class="about-area2 section-padding40">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 col-md-12">
+                <!-- about-img -->
+                <div class="about-img ">
+                    <img src="{{url_for('static',filename=('img/gallery/about.png'))}}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-12">
+                <div class="about-caption">
+                    <!-- Section Tittle -->
+                    <div class="section-tittle mb-35">
+                        <h2>Factors of sleep deprivation</h2>
+                    </div>
+                    <p class="pera-bottom mb-30">Physical disturbances (for example, chronic pain from arthritis, headaches, fibromyalgia),
+                        Medical issues (for example, sleep apnea),
+                        Psychiatric disorders (for example, depression and anxiety disorders),
+                        Environmental issues (for example, it's too bright, your partner snores),
+                        Genetics,
+                        Night Shift Work,
+                        Medication,
+                        Aging</p>
+                    <div class="icon-about">
+                     <img src="assets/img/icon/about1.svg" alt="" class=" mr-20">
+                     <img src="assets/img/icon/about2.svg" alt="">
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+</div>
+<!-- About-2 Area End -->
+<section class="wantToWork-area section-bg3" data-background="{{url_for('static',filename=('img/gallery/section_bg01.png'))}}">
+    <div class="container">
+        <div class="wants-wrapper w-padding2">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-xl-7 col-lg-9 col-md-8">
+                    <div class="wantToWork-caption wantToWork-caption2">
+                        <h2>Sound Sleep <br>healthy life</h2>
+                        <p>Negative impact of not having sound sleep</p>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4">
+                    <a href="services.html" class="btn f-right sm-left">Take a Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--? Services Area Start -->
+<div class="service-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-cat text-center mb-50">
+                    <div class="cat-icon">
+                        <img src="{{url_for('static',filename=('img/icon/services1.svg'))}}" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h5><a href="#">Heart Disease</a></h5>
+                        <p>For the cardiovascular system, insufficient or fragmented sleep can contribute to problems with blood pressure and heighten the risk of heart disease, heart attacks, diabetes, and stroke.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-cat text-center mb-50">
+                    <div class="cat-icon">
+                        <img src="{{url_for('static',filename=('img/icon/services2.svg'))}}" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h5><a href="#">Deprived concentration</a></h5>
+                        <p>You need sleep to recharge your brain. Being tired and not sleeping well disrupts genes that govern circadian rhythm, effectively reducing your ability to perform a task.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-cat text-center mb-50">
+                    <div class="cat-icon">
+                        <img src="{{url_for('static',filename=('img/icon/services3.svg'))}}" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h5><a href="#">Social Detachment</a></h5>
+                        <p>You lack social attachment from the persons you used to talk with.This has a greater impact in your life</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Services Area End -->
+<!--Table of proper sleep-->
+<section class="wantToWork-area section-bg3" data-background="{{url_for('static',filename=('img/gallery/section_bg01.png'))}}">
+    <div class="container">
+        <div class="wants-wrapper w-padding2">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-xl-7 col-lg-9 col-md-8">
+                    <div class="wantToWork-caption wantToWork-caption2">
+                        <h2>Sleep Table</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 table-responsive">
+                <table class="table" style="font-size: 18px;">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Recommended hours of sleep</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Newborn	0–3 months</td>
+                        <td>14–17 hours (National Sleep Foundation)</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Infant	4–12 months</td>
+                        <td>12–16 hours per 24 hours (including naps)2</td>
+                        
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Toddler	1–2 years</td>
+                        <td>11–14 hours per 24 hours (including naps)</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td>Preschool 3–5 years</td>
+                        <td>10–13 hours per 24 hours (including naps)</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                        <td>School Age 6–12 years</td>
+                        <td>9–12 hours per 24 hours</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">6</th>
+                        <td>Teen	13–18 years</td>
+                        <td>8–10 hours per 24 hours</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">7</th>
+                        <td>Adult	18–60 years</td>
+                        <td>7 or more hours per night</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">8</th>
+                        <td>65 years and older</td>
+                        <td>7–8 hours</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!--? About Law Start-->
+<section class="about-low-area mt-30">
+    <div class="container">
+        <div class="about-cap-wrapper">
+            <div class="row">
+                <div class="col-xl-5  col-lg-6 col-md-10 offset-xl-1">
+                    <div class="about-caption mb-50">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle mb-35">
+                            <h2>100% satisfaction guaranteed.</h2>
+                        </div>
+                        <p>Need a live consultation</p>
+                        <a href="#" class="border-btn">Make an Appointment</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <!-- about-img -->
+                    <div class="about-img">
+                        <div class="about-font-img">
+                            <img src="{{url_for('static',filename=('img/gallery/about2.png'))}}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About Law End-->
+</main>
+<footer>
+    <div class="footer-wrappr section-bg3" data-background="{{url_for('static',filename=('img/gallery/footer_bg.png'))}}">
+        <div class="footer-area footer-padding ">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12">
+                        <div class="single-footer-caption mb-50">
+                            <!-- logo -->
+                            <div class="footer-logo mb-25">
+                                <a href="index.html"><img src="{{url_for('static',filename=('img/logo/sleeper.png'))}}" alt=""></a>
+                            </div>
+                            <d iv class="header-area">
+                                <div class="main-header main-header2">
+                                    <div class="menu-main d-flex align-items-center justify-content-start">
+                                        <!-- Main-menu -->
+                                        <div class="main-menu main-menu2">
+                                            <nav> 
+                                                <ul>
+                                                    <li><a href="index.html">Home</a></li>
+                                                    <li><a href="#">About</a></li>
+                                                    <li><a href="#">Services</a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </d>
+                            <!-- social -->
+                            <div class="footer-social mt-50">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                        <div class="single-footer-caption">
+                            <div class="footer-tittle mb-50">
+                                <h4>Contact Us</h4>
+                            </div>
+                            <!-- Form -->
+                            <div class="footer-form">
+                                <div id="mc_embed_signup">
+                                    <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative mail_part" novalidate="true">
+                                        <input type="email" name="EMAIL" id="newsletter-form-email" placeholder=" Email Address " class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your email'">
+                                        <input type="text" placeholder="Type in your words"/>
+                                        <div class="form-icon">
+                                            <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">
+                                                Submit
+                                            </button>
+                                        </div>
+                                        <div class="mt-10 info"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  </div>
+</footer>
+<!-- Scroll Up -->
+<div id="back-top" >
+    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+</div>
+
+<!-- JS here -->
+<script src="{{url_for('static',filename=('scripts/vendor/jquery-1.12.4.min.css'))}}"></script>
+<script src="{{url_for('static',filename=('scripts/popper.min.css'))}}"></script>
+<script src="{{url_for('static',filename=('scripts/bootstrap.min.css'))}}"></script>
+<script src="{{url_for('static',filename=('scripts/slick.min.css'))}}"></script>
+<script src="{{url_for('static',filename=('scripts/wow.min.css'))}}"></script>
+<script src="{{url_for('static',filename=('scripts/main.css'))}}"></script>
+
+</body>
+</html>

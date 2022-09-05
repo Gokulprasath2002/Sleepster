@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sleepster | Result</title>
+        <link rel="stylesheet" href="{{url_for('static',filename=('styles/bootstrap.min.css'))}}">
+    <link rel="stylesheet" href="{{url_for('static',filename=('styles/flaticon.css'))}}">
+    <link rel="stylesheet" href="{{url_for('static',filename=('styles/animate.min.css'))}}">
+    <link rel="stylesheet" href="{{url_for('static',filename=('styles/animated-headline.css'))}}">
+    <link rel="stylesheet" href="{{url_for('static',filename=('styles/fontawesome-all.min.css'))}}">
+    <link rel="stylesheet" href="{{url_for('static',filename=('styles/themify-icons.css'))}}">
+    <link rel="stylesheet" href="{{url_for('static',filename=('styles/slick.css'))}}">
+    <link rel="stylesheet" href="{{url_for('static',filename=('styles/style.css'))}}">
+    </head>
+    <body>
+        <header>
+            <!--? Header Start -->
+            <div class="header-area">
+                <div class="main-header header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-2 col-lg-2 col-md-1">
+                                <div class="logo">
+                                    <a href="index.html"><img src="{{url_for('static',filename=('img/logo/sleeper.png'))}}"  alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-10 col-md-10">
+                                <div class="menu-main d-flex align-items-center justify-content-end">
+                                    <!-- Main-menu -->
+                                    <div class="main-menu f-right d-none d-lg-block">
+                                        <nav> 
+                                            <ul id="navigation">
+                                                <li><a href="index.html">Home</a></li>
+                                                <li><a href="#">About</a></li>
+                                                <li><a href="#">Services</a></li>
+                                                <li><a href="#">Contact</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <div class="header-right-btn f-right d-none d-lg-block ml-15">
+                                        <a href="#" class="btn header-btn">Diagnose yourself</a>
+                                    </div>
+                                </div>
+                            </div>   
+                            <!-- Mobile Menu -->
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Header End -->
+        </header>
+    
+        <main>
+    
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="crctimg">
+                            <img src="{{url_for('static',filename=('img/icon/correct.gif'))}}" class="correctgif">
+                        </div>
+    
+                    </div>
+                    <br>
+                    <br>
+                    <div class="col-md-9">
+                        <div class="resulttext">
+                            <h1 class="ml-100">Data Received and Predicted Successfully</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <br>
+    <br>
+            <!--Either yes or no-->
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2> Hi {{name}}</h2>
+                    {% if flag ==0 %}
+                        <h3 style='color:green;'>{{result}}</h3>
+                    {%else%}
+                        <h3 style='color:red;'>{{result}}</h3>
+                    {% endif%}
+                    
+                    {% if flag == 0 %}
+                        <h2>Thank you, for using our service</h2>
+                
+                    {% elif flag ==1 and mp==1 %}
+                        <h2>We have identified that you have Primary Insomnia</h2>
+                        <h2>Kindly visit your nearby doctor</h2>
+                     {% else %}
+                         <h2>We have identified that you have Secondary Insomnia</h2>
+                         <h2>Kindly visit your nearby doctor</h2>
+                    {% endif %}
+                        
+                        
+                        {% if flag==0 and sleep == 1 and age>18 %}
+                            <h2>But for your age, 0 - 4 hours of sleep doesn't result in a sound sleeo</h2>
+                            <h2>Try to improvise your sleep quality</h2>
+                        {% elif flag==0 and sleep == 3 and age>18 %}
+                             <h2>For your age, this much of sleep isn't advisable one</h2>
+                         {% else %}
+                             <h2> </h2>
+                        {% endif %}
+                        
+                        
+                        
+                        
+                </div>
+            </div>
+        </div>        
+    <br>
+    <br>
+    
+    <!--Factors of not having good sleep-->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Problems of not having good sleep</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+         <div class="container">
+            <div class="row">
+                        <div class=" card col-lg-4 col-md-6 col-sm-6">
+                            <div class="single-cat text-center mb-50">
+                                <div class="cat-icon">
+                                    <img src="{{url_for('static',filename=('img/icon/services3.svg'))}}" alt="">
+                                </div>
+                                <div class="cat-cap">
+                                    <h2><a href="#">Heart Disease</a></h2>
+                                    <p>For the cardiovascular system, insufficient or fragmented sleep can contribute to problems with blood pressure and heighten the risk of heart disease, heart attacks, diabetes, and stroke.</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" card col-lg-4 col-md-6 col-sm-6">
+                            <div class="single-cat text-center mb-50">
+                                <div class="cat-icon">
+                                    <img src="{{url_for('static',filename=('img/icon/services3.svg'))}}" alt="">
+                                </div>
+                                <div class="cat-cap">
+                                    <h2><a href="#">Deprived concentration</a></h2>
+                                    <p>You need sleep to recharge your brain. Being tired and not sleeping well disrupts genes that govern circadian rhythm, effectively reducing your ability to perform a task.</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card col-lg-4 col-md-6 col-sm-6">
+                            <div class="single-cat text-center mb-50">
+                                <div class="cat-icon">
+                                    <img src="{{url_for('static',filename=('img/icon/services3.svg'))}}" alt="">
+                                </div>
+                                <div class="cat-cap">
+                                    <h2><a href="#">Social Detachment</a></h2>
+                                    <p>You lack social attachment from the persons you used to talk with.This has a greater impact in your life</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                   
+            </div>
+            </div>
+         </div>
+        </main>
+        <footer>
+            <div class="footer-wrappr section-bg3" data-background="{{url_for('static',filename=('img/gallery/footer_bg.png'))}}">
+                <div class="footer-area footer-padding ">
+                    <div class="container">
+                        <div class="row justify-content-between">
+                            <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12">
+                                <div class="single-footer-caption mb-50">
+                                    <!-- logo -->
+                                    <div class="footer-logo mb-25">
+                                        <a href="index.html"><img src="{{url_for('static',filename=('img/logo/sleeper.png'))}}" alt=""></a>
+                                    </div>
+                                    <d iv class="header-area">
+                                        <div class="main-header main-header2">
+                                            <div class="menu-main d-flex align-items-center justify-content-start">
+                                                <!-- Main-menu -->
+                                                <div class="main-menu main-menu2">
+                                                    <nav> 
+                                                        <ul>
+                                                            <li><a href="index.html">Home</a></li>
+                                                            <li><a href="#">About</a></li>
+                                                            <li><a href="#">Services</a></li>
+                                                            <li><a href="#">Blog</a></li>
+                                                            <li><a href="#">Contact</a></li>
+                                                        </ul>
+                                                    </nav>
+                                                </div>
+                                            </div>  
+                                        </div>
+                                    </d>
+                                    <!-- social -->
+                                    <div class="footer-social mt-50">
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                                <div class="single-footer-caption">
+                                    <div class="footer-tittle mb-50">
+                                        <h4>Contact Us</h4>
+                                    </div>
+                                    <!-- Form -->
+                                    <div class="footer-form">
+                                        <div id="mc_embed_signup">
+                                            <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative mail_part" novalidate="true">
+                                                <input type="email" name="EMAIL" id="newsletter-form-email" placeholder=" Email Address " class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your email'">
+                                                <input type="text" placeholder="Type in your words"/>
+                                                <div class="form-icon">
+                                                    <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">
+                                                        Submit
+                                                    </button>
+                                                </div>
+                                                <div class="mt-10 info"></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          </div>
+        </footer>
+    <!-- Scroll Up -->
+    <div id="back-top" >
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+
+    <script src="{{url_for('static',filename=('scripts/vendor/jquery-1.12.4.min.css'))}}"></script>
+    <script src="{{url_for('static',filename=('scripts/popper.min.css'))}}"></script>
+    <script src="{{url_for('static',filename=('scripts/bootstrap.min.css'))}}"></script>
+    <script src="{{url_for('static',filename=('scripts/slick.min.css'))}}"></script>
+    <script src="{{url_for('static',filename=('scripts/wow.min.css'))}}"></script>
+    <script src="{{url_for('static',filename=('scripts/main.css'))}}"></script>
+
+    </body>
+</html>
