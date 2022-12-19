@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'sleepster'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_871474F1983E4B67ADEFDA375F3174E6 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6485A2FE06E84A47A2948B7ED4234E4C }}
