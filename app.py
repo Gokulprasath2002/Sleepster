@@ -9,7 +9,7 @@ def decompress_pickle(file):
     data = bz2.BZ2File(file, 'rb')
     data = pickle.load(data)
     return data
-model = decompress_pickle('./venv/filename.pbz2')
+model = decompress_pickle('filename.pbz2')
 @app.route('/')
 def home():  
     return render_template("index.html");  
