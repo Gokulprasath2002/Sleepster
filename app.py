@@ -1,15 +1,10 @@
 from flask import Flask,render_template,url_for,redirect,request
 import numpy as np
 import pandas as pd
-import pickle
-import bz2
+import joblib
 app = Flask(__name__)  
-def decompress_pickle(file):
 
-    data = bz2.BZ2File(file, 'rb')
-    data = pickle.load(data)
-    return data
-model = decompress_pickle('filename.pbz2')
+model = joblib.load("model.joblib")
 @app.route('/')
 def home():  
     return render_template("index.html");  
