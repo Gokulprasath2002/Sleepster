@@ -26,4 +26,4 @@ def checking():
         mp=0
     return render_template('result.html',result=result,flag=flag,name=data[0],age=data[1],sleep=data[6],mp=mp,daysleep=data[8],drowsy=data[9])
 if __name__ =='__main__':  
-    app.run()  
+    app.run(host='0.0.0.0')  
